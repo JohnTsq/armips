@@ -4,24 +4,28 @@
 * Automated builds: http://buildbot.orphis.net/armips
 
 # 1. Introduction
-//注意：这份文件仍未完善，部分信息缺失或可能过时。
-Note: This file is still incomplete, some information is missing or may be outdated.
+注意：这份文件仍未完善，部分信息缺失或可能过时。
+
+//Note: This file is still incomplete, some information is missing or may be outdated.
 
 ## 1.1 Usage
-//该assembler通过命令行调用。用法如下：
-The assembler is called from the command line. The usage is as follows:
+该assembler通过命令行调用。用法如下：
+
+//The assembler is called from the command line. The usage is as follows:
 
 ```
 armips code.asm [optional parameters]
 ```
-//`code.asm` 是你汇编代码的主文件，可以 open 和 inclue 其他文件。
-//支持以下可选命令行参数：
-`code.asm` is the main file of your assembly code, which can open and include other files.
+`code.asm` 是你汇编代码的主文件，可以 open 和 inclue 其他文件。
+支持以下可选命令行参数：
+
+//`code.asm` is the main file of your assembly code, which can open and include other files.
 The following optional command line parameters are supported:
 
 #### `-temp <filename>`
-//指定临时汇编数据的输出名称。输出示例：
-Specifies the output name for temporary assembly data. Example output:
+指定临时汇编数据的输出名称。输出示例：
+
+//Specifies the output name for temporary assembly data. Example output:
 ```
 ; 1 file  included
 ; test.asm
@@ -33,8 +37,9 @@ Specifies the output name for temporary assembly data. Example output:
 ```
 
 #### `-sym <filename>`
-//指定 sym 格式中 symbol 数据的输出名称。NO\$PSX 和 NO\$GBA 的 debuggers 支持该格式。输出示例：
-Specifies the output name for symbol data in the sym format. This format is supported by the debuggers in NO\$PSX and NO\$GBA. Example output:
+指定 sym 格式中 symbol 数据的输出名称。NO\$PSX 和 NO\$GBA 的 debuggers 支持该格式。输出示例：
+
+//Specifies the output name for symbol data in the sym format. This format is supported by the debuggers in NO\$PSX and NO\$GBA. Example output:
 ```
 00000000 0
 80000000 .dbl:0010
@@ -44,8 +49,9 @@ Specifies the output name for symbol data in the sym format. This format is supp
 ```
 
 #### `-sym2 <filename>`
-//指定 sym2 格式中 symbol 数据的输出名称。PCSX2 和 PPSSPP 的 debuggers 支持该格式。输出示例：
-Specifies the output name for symbol data in the sym2 format. This format is supported by the debuggers in PCSX2 and PPSSPP. Example output:
+指定 sym2 格式中 symbol 数据的输出名称。PCSX2 和 PPSSPP 的 debuggers 支持该格式。输出示例：
+
+//Specifies the output name for symbol data in the sym2 format. This format is supported by the debuggers in PCSX2 and PPSSPP. Example output:
 ```
 00000000 0
 80000000 .dbl:0010
@@ -55,28 +61,34 @@ Specifies the output name for symbol data in the sym2 format. This format is sup
 ```
 
 #### `-erroronwarning`
-//指定任何警告都应被作为错误处理，以防止汇编。这具有与 `.erroronwarning` directive 相同的效果。
-Specifies that any warnings shall be treated like errors, preventing assembling. This has the same effect as the `.erroronwarning` directive.
+指定任何警告都应被作为错误处理，以防止汇编。这具有与 `.erroronwarning` directive 相同的效果。
+
+//Specifies that any warnings shall be treated like errors, preventing assembling. This has the same effect as the `.erroronwarning` directive.
 
 #### `-equ <name> <replacement>`
-//相当于在汇编代码中使用 `name equ replacement`。
-Equivalent to using `name equ replacement` in the assembly code.
+相当于在汇编代码中使用 `name equ replacement`。
+
+//Equivalent to using `name equ replacement` in the assembly code.
 
 #### `-strequ <name> <replacement>`
-//相当于在汇编代码中使用 `name equ "replacement"`。
-Equivalent to using `name equ "replacement"` in the assembly code.
+相当于在汇编代码中使用 `name equ "replacement"`。
+
+//Equivalent to using `name equ "replacement"` in the assembly code.
 
 #### `-definelabel <name> <replacement>`
-//相当于在汇编代码中使用 `.definelabel name, replacement`。
-Equivalent to using `.definelabel name, replacement` in the assembly code.
+相当于在汇编代码中使用 `.definelabel name, replacement`。
+
+//Equivalent to using `.definelabel name, replacement` in the assembly code.
 
 #### `-root <directory>`
-//指定执行过程中使用的工作目录。
-Specifies the working directory to be used during execution.
+指定执行过程中使用的工作目录。
+
+//Specifies the working directory to be used during execution.
 
 #### `-stat`
-//完成后输出 areas 内已用字节的统计数据。输出示例：
-Outputs statistics for bytes used within areas after completion.  Example output:
+完成后输出 areas 内已用字节的统计数据。输出示例：
+
+//Outputs statistics for bytes used within areas after completion.  Example output:
 ```
 Total areas and regions: 5342 / 7934
 Total regions: 916 / 1624
