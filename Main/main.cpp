@@ -25,7 +25,9 @@ namespace
 #ifdef _WIN32
 int wmain(int argc, wchar_t* argv[])
 {
-	std::setlocale(LC_CTYPE, "");
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    std::setlocale(LC_ALL, ".UTF-8");
 
 	// enable ANSI escape code processing
 	HANDLE stdoutHandle = GetStdHandle(STD_OUTPUT_HANDLE);
