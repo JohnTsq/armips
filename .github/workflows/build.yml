@@ -20,6 +20,7 @@ jobs:
     name: ${{matrix.config.name}}
     runs-on: ${{matrix.config.os}}
     strategy:
+      fail-fast: false
       matrix:
         config:
           - { name: "Ubuntu gcc", os: "ubuntu-22.04", generator: "Unix Makefiles", cc: "gcc", cxx: "g++" }
