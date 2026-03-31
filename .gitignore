@@ -1,4 +1,5 @@
 /_Output/
+build/
 
 # Visual Studio working files.
 *.opensdf
