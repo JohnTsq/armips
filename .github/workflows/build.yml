@@ -4,9 +4,9 @@ on:
   push:
     tags:
       - '*'
-    branches: [ master ]
+    branches: [ vibe ]
   pull_request:
-    branches: [ master ]
+    branches: [ vibe ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
