@@ -56,7 +56,9 @@ jobs:
       shell: bash
       run: |
         cmake --build '${{github.workspace}}/build' --config ${{env.BUILD_TYPE}} --target install
-        VERSION=$(git -C '${{github.workspace}}' describe --first-parent)
+        VERSION=$(git -C '${{github.workspace}}' describe --first-parent 2>/dev/null || \
+              # ② 若没有 tag，则回退到短 SHA
+              git -C '${{github.workspace}}' rev-parse --short HEAD)
         PLATFORM=$(echo ${{matrix.config.name}} | tr '[:upper:]' '[:lower:'] | sed 's/ /_/g')
         echo "FILENAME=armips_${VERSION}_${PLATFORM}" >> $GITHUB_ENV
         echo "RELEASENAME=armips_${VERSION}" >> $GITHUB_ENV
