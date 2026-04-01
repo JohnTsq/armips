@@ -2,11 +2,11 @@ name: CMake
 
 on:
   push:
-    tags:
-      - '*'
-    branches: [ vibe ]
+    # tags:
+    #   - '*'
+    # branches: [ vibe ]
   pull_request:
-    branches: [ vibe ]
+    # branches: [ vibe ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
